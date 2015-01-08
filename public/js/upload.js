@@ -3,6 +3,7 @@
   var submitButton = document.getElementById('submit-button');
 
   var handleFileInput = function(e) {
+    $('#file-url').hide();
     $('#submit-button').attr('class', 'btn btn-primary');
     $('#submit-button').html('Upload');
     // only doing one file at a time folks
