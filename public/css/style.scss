@@ -1,0 +1,68 @@
+html, body {
+  font-size: 100%;
+}
+
+body {
+  background-color: #2b2b2b;
+}
+
+.header {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  font-family: 'UnifrakturCook', serif;
+  color: #ddd;
+  text-align: center;
+
+  a {
+    color: #ddd;
+  }
+
+  .header-headline {
+    font-size: 6em;
+    text-shadow: 3px 3px 3px #111;
+  }
+
+  .header-quote {
+    text-shadow: 3px 3px 3px #111;
+    padding: 1em;
+    font-family: 'Josefin Slab', courier;
+    font-size: 1em;
+  }
+
+  .header-logo img {
+    height: 200px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  hr {
+    width: 55%;
+    border: 1px #555 solid;
+  }
+}
+
+.upload-dialog {
+  display: inline-block;
+  background-color: #555;
+  border-radius: 10px;
+  padding: 1em;
+  margin: 2em auto;
+
+  .upload-header {
+    text-align: left;
+    color: #ddd;
+  }
+
+  .upload-preview img {
+    max-width: 500px;
+  }
+
+  input {
+    margin: 1em 0;
+  }
+
+  #submit-button {
+    display: none;
+    width: 100%;
+  }
+}

@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  h1= title
+  extends layout
+
+  block content
+    .header
+      .header-logo
+
+        img.img-circle(src='img/retrato.jpg')
+        br
+        .header-quote
+          i "Upload yer shite!"
+          |  - 
+          a(href='https://en.wikipedia.org/wiki/Pietro_Perugino')= 'Pietro Perugino'
+
+      .header-headline
+        | Pietro's Image Gallery
+
+    .main
+      .container
+        .row
+          .col-xs-12.text-center
+            .upload-dialog
+              .upload-body
+                  .upload-preview
+                  input#file-input(type='file' name='file')
+                  button#submit-button.btn.btn-primary(type='submit')= 'Upload'

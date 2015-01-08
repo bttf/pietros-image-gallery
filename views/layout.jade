@@ -1,0 +1,18 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width')
+    title= 'Pietro Welcomes You'
+    block css
+      link(rel='stylesheet', href='/components/bootstrap/dist/css/bootstrap.min.css')
+      link(rel='stylesheet', href='/components/bootstrap/dist/css/bootstrap-theme.min.css')
+      link(rel='stylesheet', href='/css/style.css')
+      link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=UnifrakturCook:700|Josefin+Slab')
+    block js
+      // REMEMBER TO REMOVE THIS FOR PRODUCTION
+      script(src='/components/jquery/dist/jquery.min.js')
+      script(src='http://localhost:35729/livereload.js')
+  body
+    block content
+    script(src='/js/upload.js')
