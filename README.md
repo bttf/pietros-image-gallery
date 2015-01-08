@@ -1,5 +1,3 @@
-![Pietro Perugino](https://raw.githubusercontent.com/bttf/pietros-image-gallery/master/public/img/retrato.jpg)
-
 # Pietro's Image Gallery
 A self-contained server and webpage to allow the user to upload and host static image files.
 
@@ -15,5 +13,5 @@ Once submitted, the web page makes an AJAX request to itself to the '/upload' UR
 
 ## Steps
 1. 'npm install && bower install'
-2. Run 'npm start' to start the server, 'grunt' if you want to start and enable asset pipeline (development)
+2. Run 'npm start' to start the server, 'grunt' if you want to start and enable asset pipeline (development).
 3. Access http://localhost:3000 in your browser.
