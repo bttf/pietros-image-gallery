@@ -3,6 +3,8 @@
   var submitButton = document.getElementById('submit-button');
 
   var handleFileInput = function(e) {
+    $('#submit-button').attr('class', 'btn btn-primary');
+    $('#submit-button').html('Upload');
     // only doing one file at a time folks
     var file = e.target.files[0];
     if (!file.type.match('image.*')) return;
@@ -16,9 +18,13 @@
     reader.readAsDataURL(file);
   };
 
-  var successfulUpload = function() {
-    // it is here that some shit is done
+  var successfulUpload = function(response) {
     console.log('debug: success');
+    $('#submit-button').attr('class', 'btn btn-success');
+    $('#submit-button').html('Success!');
+    $('#file-url').show();
+    console.log(response);
+    $('#file-url').val([window.location.href, 'uploads/', response].join(''));
   };
 
   var notSuccessfulUpload = function() {
@@ -29,7 +35,9 @@
   var uploadFile = function(e) {
     var src = $('.upload-preview img').attr('src');
     var name = $('.upload-preview img').attr('name');
-    if (!src || !name) return;
+    var submitted = $('#submit-button').attr('class').indexOf('success') != -1;
+    if (!src || !name || submitted) return;
+    $('#submit-button').html('<img src="components/loading/loading-spokes.svg" alt="Loading">');
     $.ajax({
       type: 'POST',
       url: '/upload',
@@ -44,4 +52,5 @@
 
   fileInput.addEventListener('change', handleFileInput, false);
   submitButton.addEventListener('mouseup', uploadFile, false);
+  $('#file-url').focus(function() { $(this).select() });
 })();

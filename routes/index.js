@@ -17,7 +17,7 @@ router.post('/upload', function(req, res, next) {
       console.log('err', err);
       next(err);
     } else {
-      res.send('OK');
+      res.send(filename);
     }
   });
 });

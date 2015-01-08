@@ -44,5 +44,11 @@ body {
   .upload-dialog #submit-button {
     display: none;
     width: 100%; }
+    .upload-dialog #submit-button img {
+      height: 1em; }
+  .upload-dialog #file-url {
+    display: none;
+    margin: 0.5em 0 0 0;
+    width: 100%; }
 
 /*# sourceMappingURL=style.css.map */

@@ -64,5 +64,14 @@ body {
   #submit-button {
     display: none;
     width: 100%;
+    img {
+      height: 1em;
+    }
+  }
+
+  #file-url {
+    display: none;
+    margin: 0.5em 0 0 0;
+    width: 100%;
   }
 }
