@@ -26,5 +26,13 @@ block content
               .upload-body
                   .upload-preview
                   input#file-input(type='file' name='file')
-                  button#submit-button.btn.btn-primary(type='submit')= 'Upload'
+                  button#submit-button.btn.btn-primary(type='submit')
+                    .upload-facade
+                      |Upload
+                    .success-facade
+                      |Success!
+                    .failure-facade
+                      |Failed 
+                    .loading-spokes
+                      img(src='components/loading/loading-spokes.svg')
                   input#file-url(type='text' readonly)

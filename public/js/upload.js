@@ -1,11 +1,40 @@
 (function() {
-  var fileInput = document.getElementById('file-input');
-  var submitButton = document.getElementById('submit-button');
+  function setButtonStatus(status) {
+    switch (status) {
+      case 'success':
+        $('#submit-button').attr('class', 'btn btn-success');
+        $('.failure-facade').hide();
+        $('.loading-spokes').hide();
+        $('.upload-facade').hide();
+        $('.success-facade').show();
+        break;
+      case 'failure':
+        $('#submit-button').attr('class', 'btn btn-danger');
+        $('.upload-facade').hide();
+        $('.success-facade').hide();
+        $('.loading-spokes').hide();
+        $('.failure-facade').show();
+        break;
+      case 'loading':
+        $('#submit-button').attr('class', 'btn btn-primary');
+        $('.success-facade').hide();
+        $('.failure-facade').hide();
+        $('.upload-facade').hide();
+        $('.loading-spokes').show();
+        break;
+      case 'ready':
+        $('#submit-button').attr('class', 'btn btn-primary');
+        $('.success-facade').hide();
+        $('.failure-facade').hide();
+        $('.loading-spokes').hide();
+        $('.upload-facade').show();
+        break;
+    }
+  }
 
   var handleFileInput = function(e) {
     $('#file-url').hide();
-    $('#submit-button').attr('class', 'btn btn-primary');
-    $('#submit-button').html('Upload');
+    setButtonStatus('ready');
     // only doing one file at a time folks
     var file = e.target.files[0];
     if (!file.type.match('image.*')) return;
@@ -20,17 +49,14 @@
   };
 
   var successfulUpload = function(response) {
-    console.log('debug: success');
-    $('#submit-button').attr('class', 'btn btn-success');
-    $('#submit-button').html('Success!');
+    setButtonStatus('success');
     $('#file-url').show();
-    console.log(response);
     $('#file-url').val([window.location.href, 'uploads/', response].join(''));
   };
 
-  var notSuccessfulUpload = function() {
-    // it is here that some shit is also done
-    console.log('debug: failure');
+  var notSuccessfulUpload = function(xhr, status, err) {
+    console.log('debug: failure', err);
+    setButtonStatus('failure');
   };
 
   var uploadFile = function(e) {
@@ -38,7 +64,7 @@
     var name = $('.upload-preview img').attr('name');
     var submitted = $('#submit-button').attr('class').indexOf('success') != -1;
     if (!src || !name || submitted) return;
-    $('#submit-button').html('<img src="components/loading/loading-spokes.svg" alt="Loading">');
+    setButtonStatus('loading');
     $.ajax({
       type: 'POST',
       url: '/upload',
@@ -51,7 +77,7 @@
     });
   };
 
-  fileInput.addEventListener('change', handleFileInput, false);
-  submitButton.addEventListener('mouseup', uploadFile, false);
   $('#file-url').focus(function() { $(this).select() });
+  $('#submit-button').click(uploadFile);
+  $('#file-input').change(handleFileInput);
 })();

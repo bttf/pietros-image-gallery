@@ -64,8 +64,20 @@ body {
   #submit-button {
     display: none;
     width: 100%;
-    img {
-      height: 1em;
+
+    .loading-spokes {
+      display: none;
+      img { 
+        height: 1em;
+      }
+    }
+
+    .success-facade {
+      display: none;
+    }
+
+    .failure-facade {
+      display: none;
     }
   }
 

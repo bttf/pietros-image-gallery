@@ -44,8 +44,14 @@ body {
   .upload-dialog #submit-button {
     display: none;
     width: 100%; }
-    .upload-dialog #submit-button img {
-      height: 1em; }
+    .upload-dialog #submit-button .loading-spokes {
+      display: none; }
+      .upload-dialog #submit-button .loading-spokes img {
+        height: 1em; }
+    .upload-dialog #submit-button .success-facade {
+      display: none; }
+    .upload-dialog #submit-button .failure-facade {
+      display: none; }
   .upload-dialog #file-url {
     display: none;
     margin: 0.5em 0 0 0;
