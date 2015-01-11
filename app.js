@@ -23,6 +23,11 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+// intended for reverse-proxy use
+// app.set('trust proxy', function(ip) {
+//   return ip === '127.0.0.1';
+// })
+
 
 app.use(function (req, res, next) {
   var user = auth(req);
