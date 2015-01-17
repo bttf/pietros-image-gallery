@@ -1,7 +1,7 @@
 # Pietro's Image Gallery
 A self-contained server and webpage to allow the user to upload and host static image files.
 
-![http://pietro.adnan-chowdhury.com/uploads/1421529837299pietro.gif](Site demo GIF)
+![Demo GIF](http://pietro.adnan-chowdhury.com/uploads/1421529837299pietro.gif)
 
 ## Origins & Goals
 The goal of this was to create a small webserver that anyone could run on their machine so that they could upload and host images via a web UI.
