@@ -6,7 +6,7 @@ The goal of this was to create a small webserver that anyone could run on their 
 
 I recently built a blogging web-app that was lacking any sort of static-file uploading functionality (e.g. uploading images to display in my articles). I originally planned to implement it inside of the application, but decided to build it separately in a self-contained package for learning purposes and for reusability.
 
-See [Blog Post](http://blog.chewbonga.com/entry/54b204b1606cf296051395c0) for more info.
+See the [blog post](http://blog.chewbonga.com/entry/54b204b1606cf296051395c0) for more info.
 
 ## How it Works
 The app serves just one web page at the root index ('/'). There you will find an upload dialog to select a file and to upload it.
